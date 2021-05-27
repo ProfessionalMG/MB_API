@@ -1,10 +1,13 @@
 from django.conf.global_settings import DEBUG, MEDIA_URL, MEDIA_ROOT
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/profiles/', include('profiles.api.urls')),
+    path('api/auth/', include('rest_framework.urls')),
+    path('api/rest-auth/', include('rest_auth.urls')),
 ]
 
 if DEBUG:
