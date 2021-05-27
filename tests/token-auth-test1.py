@@ -3,7 +3,7 @@ import requests
 
 def client():
     # In development, add superuser credentials for username and password. DO NOT USE THIS TEST IN PRODUCTION !
-    credentials = {'username': 'bawo', 'password': 'password1'}
+    credentials = {'username': '', 'password': ''}
     response = requests.post('http://127.0.0.1:8000/api/rest-auth/login/', data=credentials)
     print(f'Status Code: {response.status_code}')
     # Expected Response: Status Code: 200
