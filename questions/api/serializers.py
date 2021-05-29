@@ -40,9 +40,9 @@ class QuestionSerializer(ModelSerializer):
     def get_created_at(self, insatnce):
         return insatnce.created_at.strftime('%d &B &Y')
 
-    def get_answers_count(self, insatnce):
+    def get_answer_count(self, insatnce):
         return insatnce.answers.count()
 
     def get_user_has_answered(self, insatnce):
         request = self.context.get('request')
-        return insatnce.answers.filter(pk=request.user).exists()
+        return insatnce.answers.filter(pk=request.user.pk).exists()
